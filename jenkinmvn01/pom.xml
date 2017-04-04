@@ -6,21 +6,36 @@
   <name>jenkinmvn01.com</name>
   <description>jenkinmvn01.com</description>
   <dependencies>
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>2.53.0</version>
-</dependency>
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>6.10</version>
-</dependency>
-<!-- <dependency>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>2.19.1</version>
-</dependency> -->
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+     <dependency>
+       <groupId>org.seleniumhq.selenium</groupId>
+       <artifactId>selenium-java</artifactId>
+       <version>3.3.1</version>
+     </dependency>     
+  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+     <dependency>
+       <groupId>org.testng</groupId>
+       <artifactId>testng</artifactId>
+       <version>6.11</version>
+     </dependency>  
   </dependencies>
-  
+  <build>
+    <plugins>
+    <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <version>3.5.1</version>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>src\test\resources\test.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build> 
 </project>
